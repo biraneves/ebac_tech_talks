@@ -1,0 +1,23 @@
+@use 'config/fn';
+@use 'config/mxn';
+@use 'config/vars';
+@use 'hero';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap');
+
+* {
+    @include mxn.reset;
+}
+
+.container {
+    max-width: 960px;
+    width: 100%;
+    margin: 0 auto;
+
+    @media screen and (max-width: vars.$bpMobile) {
+        max-width: 80%;
+    }
+
+    @media screen and (min-width: vars.$bpMobile + 1) and (max-width: vars.$bpTablet) {
+        max-width: 90%;
+    }
+}

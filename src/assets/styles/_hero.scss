@@ -1,0 +1,56 @@
+@use 'config/fn';
+@use 'config/mxn';
+@use 'config/vars';
+
+.hero {
+    padding-top: fn.p2r(64px);
+    padding-bottom: fn.p2r(100px);
+    background-image: url(../images/fundo.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    .container {
+        position: relative;
+    }
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: vars.$baseBlack;
+        content: '';
+        opacity: 0.7;
+    }
+
+    &__logo {
+        display: block;
+        margin: 0 auto;
+        height: fn.p2r(80px);
+    }
+
+    &__text {
+        margin-top: fn.p2r(64px);
+        margin-bottom: fn.p2r(64px);
+        font-size: fn.p2r(40px);
+        font-weight: 900;
+        line-height: fn.p2r(56px);
+        text-align: center;
+    }
+
+    @media screen and (max-width: vars.$bpMobile) {
+        padding-top: 40px 0;
+
+        &__logo {
+            height: fn.p2r(40px);
+        }
+
+        &__text {
+            font-size: fn.p2r(22px);
+            line-height: fn.p2r(24px);
+            margin: fn.p2r(24px) 0;
+        }
+    }
+}
