@@ -1,0 +1,67 @@
+@use './config/fn';
+@use './config/mxn';
+@use './config/vars';
+
+.event {
+    padding: fn.p2r(80px) 0;
+
+    &--frontend {
+        background-image: linear-gradient(vars.$grad01 0%, vars.$grad02 100%);
+    }
+
+    &--ui-ux {
+        background-image: linear-gradient(vars.$grad02 0%, vars.$grad03 100%);
+    }
+
+    &--data-science {
+        background-image: linear-gradient(vars.$grad03 0%, vars.$grad04 100%);
+    }
+
+    &--backend {
+        background-image: linear-gradient(vars.$grad04 0%, vars.$grad05 100%);
+    }
+
+    &--image-left {
+        .container {
+            flex-direction: row-reverse;
+        }
+    }
+
+    .container {
+        display: flex;
+        gap: fn.p2r(40px);
+    }
+
+    &__details {
+        &__title {
+            font-size: fn.p2r(18px);
+            font-weight: bold;
+            margin-bottom: fn.p2r(16px);
+        }
+
+        &__description {
+            line-height: fn.p2r(22px);
+        }
+    }
+
+    &__image {
+        max-width: 360px;
+        border-radius: fn.p2r(4px);
+    }
+
+    @media screen and (max-width: vars.$bpMobile) {
+        padding: fn.p2r(40px) 0;
+
+        .container {
+            flex-direction: column-reverse;
+        }
+
+        &__details {
+            margin-right: 0;
+        }
+
+        &__image {
+            width: 100%;
+        }
+    }
+}

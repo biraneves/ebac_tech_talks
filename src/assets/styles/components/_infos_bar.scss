@@ -1,0 +1,44 @@
+@use '../config/fn';
+@use '../config/mxn';
+@use '../config/vars';
+
+.infos-bar {
+    padding: fn.p2r(16px) fn.p2r(24px);
+    background-color: vars.$baseWhite;
+    display: flex;
+    justify-content: space-between;
+
+    &__infos {
+        display: flex;
+        gap: fn.p2r(40px);
+
+        &__item {
+            font-size: fn.p2r(14px);
+            color: vars.$baseBlack;
+
+            strong {
+                display: block;
+                color: vars.$baseBlack;
+                font-size: fn.p2r(18px);
+            }
+        }
+    }
+
+    @media screen and (max-width: vars.$bpTablet) {
+        &__infos {
+            gap: fn.p2r(16px);
+        }
+    }
+
+    @media screen and (max-width: vars.$bpMobile) {
+        display: block;
+
+        &__infos {
+            display: block;
+
+            &__item {
+                margin-bottom: fn.p2r(24px);
+            }
+        }
+    }
+}

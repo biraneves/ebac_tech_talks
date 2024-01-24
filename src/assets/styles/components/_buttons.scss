@@ -1,0 +1,27 @@
+@use '../config/fn';
+@use '../config/mxn';
+@use '../config/vars';
+
+.button {
+    padding: fn.p2r(12px);
+    font-size: fn.p2r(18px);
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    white-space: nowrap;
+
+    &--primary {
+        color: vars.$baseWhite;
+        background-color: vars.$bgButtonPrimary;
+    }
+
+    @media screen and (max-width: vars.$bpTablet) {
+        display: flex;
+        align-items: center;
+    }
+
+    @media screen and (max-width: vars.$bpMobile) {
+        display: block;
+        width: 100%;
+    }
+}
